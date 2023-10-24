@@ -8,5 +8,7 @@ this is vincent branch
 
 if(a=b):
     c= a+b
+    #this is some function 
+    a+b=c
 if(a!=b):
     pass
