@@ -7,6 +7,6 @@ this is vincent branch
 
 
 if(a=b):
-    pass
+    c= a+b
 if(a!=b):
     c=a-b
