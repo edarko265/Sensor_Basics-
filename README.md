@@ -11,6 +11,8 @@ ajlsdfkjasldfj
 jlaksdjflsaKF
 if(a=b):
     c= a+b
+    #this is some function 
+    a+b=c
 if(a!=b):
     c=a-b
     kajlfdkjalfd
