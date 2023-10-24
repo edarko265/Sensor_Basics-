@@ -11,4 +11,4 @@ if(a=b):
     #this is some function 
     a+b=c
 if(a!=b):
-    pass
+    c=a-b
