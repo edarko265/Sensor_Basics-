@@ -16,9 +16,12 @@ cs = digitalio.DigitalInOut(board.D5)
 mcp = MCP.MCP3008(spi, cs)
 
 # create an analog input channel on pin 0
-chan = AnalogIn(mcp, MCP.P2)
-while True:
-    chan = AnalogIn(mcp, MCP.P2)
-    print("Raw ADC Value: ", chan.value)
-    #print("ADC Voltage: " + str(chan.voltage) + "V")
-    sleep(0.1)
+chan1 = AnalogIn(mcp, MCP.P1)
+chan2 = AnalogIn(mcp, MCP.P2)
+
+def movement_detect():
+    while True:
+        chan2 = AnalogIn(mcp, MCP.P2)
+        print("Raw ADC Value: ", chan2.value)
+        #print("ADC Voltage: " + str(chan.voltage) + "V")
+        sleep(0.1)
