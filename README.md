@@ -5,3 +5,5 @@ link to the presenation (flowchart included): https://www.canva.com/design/DAFvx
 
 
 this is eric branch
+update - method created for magnectic
+update - method created for speaker 
