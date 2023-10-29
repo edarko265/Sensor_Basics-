@@ -29,13 +29,13 @@ def CheckIfTheLaserBroken(chan):
         return False #the connection is still good
 
 
-def CheckDirectionOfMovement():
+def movementDetect():
         if(CheckIfTheLaserBroken(chan1) == True):
-            return 1 #inward movement 
+            return 2 #inward movement , outside of the house
         elif (CheckIfTheLaserBroken(chan2)==True):
-            return 2 #outward movement
+            return 1 #outward movement , inside of the house
         else: 
-            return 3 #nothing
+            return 0 #nothing
 
 
 
