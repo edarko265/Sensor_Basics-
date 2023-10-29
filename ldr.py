@@ -19,9 +19,24 @@ mcp = MCP.MCP3008(spi, cs)
 chan1 = AnalogIn(mcp, MCP.P1)
 chan2 = AnalogIn(mcp, MCP.P2)
 
-def movement_detect():
-    while True:
-        chan2 = AnalogIn(mcp, MCP.P2)
-        print("Raw ADC Value: ", chan2.value)
-        #print("ADC Voltage: " + str(chan.voltage) + "V")
-        sleep(0.1)
+temp = 65530
+
+wait_time = 5
+def CheckIfTheLaserBroken(chan): 
+    if(temp < chan.value):
+        return True #the connection has been broken
+    else:
+        return False #the connection is still good
+
+
+def CheckDirectionOfMovement():
+        if(CheckIfTheLaserBroken(chan1) == True):
+            return 1 #inward movement 
+        elif (CheckIfTheLaserBroken(chan2)==True):
+            return 2 #outward movement
+        else: 
+            return 3 #nothing
+
+
+
+    
