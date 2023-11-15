@@ -1,7 +1,7 @@
-import RPi.GPIO as GPIO
-import time
-import pygame
-import digitalio
+# import RPi.GPIO as GPIO
+# import time
+# import pygame
+# import digitalio
  
      
 '''pygame.mixer.init()
@@ -29,3 +29,19 @@ for i in range(x):
 
 GPIO.cleanup()"""
 
+import time
+import keyboard
+
+start_time = time.time()  # Start the timer
+key_pressed = False
+
+while True:
+    if keyboard.is_pressed("s"):
+        key_pressed = True
+        break
+    elif time.time() - start_time >= 5:
+        print("nothing happen")
+        break
+
+if key_pressed:
+    print("it has been pressed")
