@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
-from Speaker import play_buzzer
-def magnectic(door_sensor_pin=17, speaker_pin=18):
+
+def magnectic(door_sensor_pin=17): #def magnectic(door_sensor_pin=17, speaker_pin=18):
     # Set up GPIO
     GPIO.setmode(GPIO.BCM)
 
@@ -9,7 +9,7 @@ def magnectic(door_sensor_pin=17, speaker_pin=18):
     GPIO.setup(door_sensor_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
     # GPIO output for speaker
-    GPIO.setup(speaker_pin, GPIO.OUT)
+    #GPIO.setup(speaker_pin, GPIO.OUT)
 
     try:
         while True:
@@ -18,16 +18,16 @@ def magnectic(door_sensor_pin=17, speaker_pin=18):
 
             if door_switch_state == GPIO.LOW:
                 # door switch is open, turn on the speaker
-                GPIO.output(speaker_pin, GPIO.LOW)
-                #return False
-                print("door switch is closed - Speaker OFF")
+                #GPIO.output(speaker_pin, GPIO.LOW)
+                return False
+                #print("door switch is closed - Speaker OFF")
                 
             else:
                 # door switch is closed, turn off the speaker
-                #return True
-                GPIO.output(speaker_pin, GPIO.HIGH)
-                print("door switch is opened - Speaker ON")
-                play_buzzer()
+                return True
+                #GPIO.output(speaker_pin, GPIO.HIGH)
+                #print("door switch is opened - Speaker ON")
+                #play_buzzer()
                
             time.sleep(0.5)  # Adds a small delay to avoid rapid change of state
 
