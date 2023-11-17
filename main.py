@@ -14,10 +14,8 @@ def checkNumbPeopleInside():
                     Speaker.playsound()
 
 while True:
-    if(1==2):
-    # if(door_sensor.magnetic()==False): #the door is closed
-        # pass
-        print("...")
+    if(door_sensor.magnetic()==False): #the door is closed
+        pass
     else: #the door is opened
         print(ldr.movement_detect())
         match ldr.movement_detect():
