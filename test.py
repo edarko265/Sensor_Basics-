@@ -29,19 +29,20 @@ for i in range(x):
 
 GPIO.cleanup()"""
 
-import time
-import keyboard
+# import time
+# import keyboard
 
-start_time = time.time()  # Start the timer
-key_pressed = False
+# start_time = time.time()  # Start the timer
+# key_pressed = False
 
-while True:
-    if keyboard.is_pressed("s"):
-        key_pressed = True
-        break
-    elif time.time() - start_time >= 5:
-        print("nothing happen")
-        break
+# while True:
+#     if keyboard.is_pressed("s"):
+#         key_pressed = True
+#         break
+#     elif time.time() - start_time >= 5:
+#         print("nothing happen")
+#         break
 
-if key_pressed:
-    print("it has been pressed")
+# if key_pressed:
+#     print("it has been pressed")
+

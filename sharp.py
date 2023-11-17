@@ -18,8 +18,13 @@ mcp = MCP.MCP3008(spi, cs)
 # create an analog input channel on pin 0
 chan = AnalogIn(mcp, MCP.P0)
 def presence_detection():
-    while True:
-        chan = AnalogIn(mcp, MCP.P0)
-        print("Raw ADC Value: ", chan.value)
-        #print("ADC Voltage: " + str(chan.voltage) + "V")
-        sleep(0.1)
+    if(chan.value < 35000):
+        return False
+    else:
+        return True
+
+
+# while True:
+#         chan = AnalogIn(mcp, MCP.P0)
+#         print(chan.value)
+#         sleep(1)

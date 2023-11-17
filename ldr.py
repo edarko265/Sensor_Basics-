@@ -16,27 +16,29 @@ cs = digitalio.DigitalInOut(board.D5)
 mcp = MCP.MCP3008(spi, cs)
 
 # create an analog input channel on pin 0
-chan1 = AnalogIn(mcp, MCP.P1)
-chan2 = AnalogIn(mcp, MCP.P2)
+chan1 = AnalogIn(mcp, MCP.P1) #outside of the house
+chan2 = AnalogIn(mcp, MCP.P2) #inside of the house
 
-temp = 65530
+normal_value = 0
 
 wait_time = 5
 def CheckIfTheLaserBroken(chan): 
-    if(temp < chan.value):
-        return True #the connection has been broken
+    if(chan.value - normal_value < 400):
+        return False #the connection has been broken
     else:
-        return False #the connection is still good
+        return True #the connection is still good
 
 
-def movementDetect():
-        if(CheckIfTheLaserBroken(chan1) == True):
-            return 2 #inward movement , outside of the house
-        elif (CheckIfTheLaserBroken(chan2)==True):
+def movement_detect():
+        if((CheckIfTheLaserBroken(chan1) == True) and (CheckIfTheLaserBroken(chan2) == True)):
+            return 0 #Nothing
+        elif (CheckIfTheLaserBroken(chan2)==False):
             return 1 #outward movement , inside of the house
-        else: 
-            return 0 #nothing
+        elif (CheckIfTheLaserBroken(chan1)==False): 
+            return 2 #inward movement , outside of the house
 
 
-
-    
+while True:
+    print(chan1.value)
+    print(CheckIfTheLaserBroken(chan1))
+    sleep(1)   
