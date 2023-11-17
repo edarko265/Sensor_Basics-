@@ -2,9 +2,14 @@ import RPi.GPIO as GPIO
 import time
 import pygame
 
-pygame.mixer.init()
-buzzer= pygame.mixer.Sound("alarm.mp3")
+def playsound():
+    pygame.mixer.init()
+    buzzer= pygame.mixer.Sound("alarm.mp3")
+    playing= buzzer.play()
 
-playing= buzzer.play()
-while playing.get_busy():
-    pygame.time.delay(100)
+
+def stop_play():
+    pass
+
+# while playing.get_busy():
+#     pygame.time.delay(100)
