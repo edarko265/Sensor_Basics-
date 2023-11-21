@@ -19,12 +19,14 @@ def magnectic(door_sensor_pin=17): #def magnectic(door_sensor_pin=17, speaker_pi
             if door_switch_state == GPIO.LOW:
                 # door switch is open, turn on the speaker
                 #GPIO.output(speaker_pin, GPIO.LOW)
-                return False
+                door_open = False
+                return door_open
                 #print("door switch is closed - Speaker OFF")
                 
             else:
                 # door switch is closed, turn off the speaker
-                return True
+                door_open = True
+                return door_open
                 #GPIO.output(speaker_pin, GPIO.HIGH)
                 #print("door switch is opened - Speaker ON")
                 #play_buzzer()

@@ -48,14 +48,14 @@ GPIO.cleanup()"""
 #     print("it has been pressed")
 
 
-while True:
-    if (door_sensor.magnectic()==True):
-        print("Door is opened")
-        Speaker.playsound()
-        time.sleep(1)
-        Speaker.playsound()
-    else:
-        print("Door is closed")
-        Speaker.stop_playsound()
-        time.sleep(1)
+# while True:
+#     if (door_sensor.magnectic()==True):
+#         print("Door is opened")
+#         Speaker.playsound()
+#         time.sleep(1)
+#         Speaker.playsound()
+#     else:
+#         print("Door is closed")
+#         Speaker.stop_playsound()
+#         time.sleep(1)
         

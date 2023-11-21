@@ -22,8 +22,13 @@ while True:
                 start_time = time.time()  # Start the timer
                 while True:
                     if (ldr.movement_detect()==1):
-                        numberPeopleInside -= 1
+                        if(numberPeopleInside==0):
+                            pass
+                        else:
+                            numberPeopleInside -= 1
+                        
                         checkNumbPeopleInside()
+
                     elif(ldr.movement_detect()==2):
                         numberPeopleInside +=1
                         
@@ -33,16 +38,22 @@ while True:
                         
                         if (door_sensor.magnectic()==True):
                             Speaker.playsound()
+                            numberPeopleInside = +1
                         elif(door_sensor.magnectic()==False):
                              #check for the patient presence
                             if(sharp.presence_detection()==True):
                                 pass
                             elif(sharp.presence_detection()==False):
                                 Speaker.playsound()
+                                numberPeopleInside = +1
 
 
             case 1: #Outward movement detected.Eric's part
-                numberPeopleInside -= 1
+                if(numberPeopleInside==0):
+                     pass
+                else:
+                    numberPeopleInside -= 1
+                
                 checkNumbPeopleInside()
             case 2: #Inward movement detected. Vincent's part
                 numberPeopleInside = +1

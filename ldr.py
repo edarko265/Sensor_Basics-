@@ -31,11 +31,14 @@ def CheckIfTheLaserBroken(chan):
 
 def movement_detect():
         if((CheckIfTheLaserBroken(chan1) == True) and (CheckIfTheLaserBroken(chan2) == True)):
-            return 0 #Nothing
+            movement = 0 #Nothing
+            return movement
         elif (CheckIfTheLaserBroken(chan2)==False):
-            return 1 #outward movement , inside of the house
+            movement = 1 #outward movement , inside of the house
+            return movement 
         elif (CheckIfTheLaserBroken(chan1)==False): 
-            return 2 #inward movement , outside of the house
+            movement = 2 #inward movement , outside of the house
+            return movement  
 
 
 # while True: 
