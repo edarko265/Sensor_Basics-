@@ -25,6 +25,5 @@ def presence_detection():
 
 
 # while True:
-#         chan = AnalogIn(mcp, MCP.P0)
 #         print(chan.value)
 #         sleep(1)

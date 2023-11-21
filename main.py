@@ -14,10 +14,9 @@ def checkNumbPeopleInside():
                     Speaker.playsound()
 
 while True:
-    if(door_sensor.magnetic()==False): #the door is closed
+    if(door_sensor.magnectic()==False): #the door is closed
         pass
     else: #the door is opened
-        print(ldr.movement_detect())
         match ldr.movement_detect():
             case 0: #no movement detected.
                 start_time = time.time()  # Start the timer
@@ -32,9 +31,9 @@ while True:
                     if time.time() - start_time >= 5: #if the door left open longer than 5s but there are no movement detected then the alarm will goes off
                         #if the door has been closed then nothing happen. Fix this part!!!
                         
-                        if (door_sensor.magnetic()==True):
+                        if (door_sensor.magnectic()==True):
                             Speaker.playsound()
-                        elif(door_sensor.magnetic()==False):
+                        elif(door_sensor.magnectic()==False):
                              #check for the patient presence
                             if(sharp.presence_detection()==True):
                                 pass

@@ -1,8 +1,9 @@
-# import RPi.GPIO as GPIO
-# import time
-# import pygame
-# import digitalio
- 
+import RPi.GPIO as GPIO
+import time
+import pygame
+import digitalio
+import Speaker
+import door_sensor
      
 '''pygame.mixer.init()
 buzzer= pygame.mixer.Sound("alarm.mp3")
@@ -46,3 +47,15 @@ GPIO.cleanup()"""
 # if key_pressed:
 #     print("it has been pressed")
 
+
+while True:
+    if (door_sensor.magnectic()==True):
+        print("Door is opened")
+        Speaker.playsound()
+        time.sleep(1)
+        Speaker.playsound()
+    else:
+        print("Door is closed")
+        Speaker.stop_playsound()
+        time.sleep(1)
+        

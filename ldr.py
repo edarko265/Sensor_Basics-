@@ -23,7 +23,7 @@ normal_value = 0
 
 wait_time = 5
 def CheckIfTheLaserBroken(chan): 
-    if(chan.value - normal_value < 400):
+    if(chan.value < 100):
         return False #the connection has been broken
     else:
         return True #the connection is still good
@@ -38,7 +38,8 @@ def movement_detect():
             return 2 #inward movement , outside of the house
 
 
-while True:
-    print(chan1.value)
-    print(CheckIfTheLaserBroken(chan1))
-    sleep(1)   
+# while True: 
+#     # print(chan2.value)
+#     # print(CheckIfTheLaserBroken(chan1))
+#     print(movement_detect())
+#     sleep(1)   
