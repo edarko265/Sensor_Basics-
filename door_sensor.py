@@ -48,7 +48,7 @@ def magnectic(door_sensor_pin=17): #def magnectic(door_sensor_pin=17, speaker_pi
 # Call the function with the desired GPIO pins
 #magnectic(door_sensor_pin=17, speaker_pin=18)
 
-# while True:
-#     print(magnectic())
-#     time.sleep(1)
+while True:
+    print(magnectic())
+    time.sleep(1)
      

@@ -24,6 +24,6 @@ def presence_detection():
         return True
 
 
-# while True:
-#         print(chan.value)
-#         sleep(1)
+while True:
+        print(chan.value)
+        sleep(1)
