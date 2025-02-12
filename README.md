@@ -47,6 +47,9 @@ This project implements a Remote Patient Monitoring and Alarm System using a Ras
 |       Cloud / IoT Dashboard      |
 +----------------------------------+
 
+## How it Works 
+![Xanh dương Thành phần 3D Công nghệ 5G Bản thuyết trình](https://github.com/user-attachments/assets/60c009f5-f143-428d-b818-7cb319cb534d)
+
 
 # 🛠 Installation Guide
 ## 1️⃣ Hardware Requirements
@@ -69,7 +72,7 @@ This project implements a Remote Patient Monitoring and Alarm System using a Ras
 1. Clone this repository:
 
 ```bash
-[https://github.com/edarko265/Cashier-App.git]
+[https://github.com/edarko265/Cashier-App.git](https://github.com/edarko265/Sensor_Basics.git)]
 ```
 2. Connect the Sensors – Wire up the sensors to the Raspberry Pi GPIO pins as per the circuit diagram (to be added).
 
